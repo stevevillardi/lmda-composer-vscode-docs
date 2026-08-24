@@ -1,0 +1,835 @@
+/* Custom styles for LMDA Composer docs */
+/* Professional, corporate aesthetic with unified component styling */
+
+/* ============================================================================
+   Base Variables & Layout Dimensions
+   ============================================================================ */
+
+:root {
+    --sl-content-width: 1500px;
+    --sl-text-width: 900px;
+    --sl-nav-height: 4rem;
+    --sl-mobile-toc-height: 3rem;
+    --sl-sidebar-width: 300px;
+
+    /* Gray scale for dark theme (default) */
+    --sl-color-white: hsl(0, 0%, 100%);
+    --sl-color-gray-1: hsl(224, 20%, 94%);
+    --sl-color-gray-2: hsl(224, 6%, 77%);
+    --sl-color-gray-3: hsl(224, 6%, 56%);
+    --sl-color-gray-4: hsl(224, 7%, 36%);
+    --sl-color-gray-5: hsl(224, 10%, 23%);
+    --sl-color-gray-6: hsl(224, 14%, 16%);
+    --sl-color-black: hsl(224, 10%, 10%);
+
+    /* Semantic color system */
+    --sl-hue-primary: 224;
+    --sl-hue-success: 142;
+    --sl-hue-warning: 38;
+    --sl-hue-danger: 0;
+    
+    /* Primary (Blue) - CTAs, primary links, active states */
+    --sl-color-primary-low: hsl(var(--sl-hue-primary), 54%, 20%);
+    --sl-color-primary: hsl(var(--sl-hue-primary), 100%, 60%);
+    --sl-color-primary-high: hsl(var(--sl-hue-primary), 100%, 85%);
+    
+    /* Success (Green) - Supported, connected, success states */
+    --sl-color-success-low: hsl(var(--sl-hue-success), 39%, 18%);
+    --sl-color-success: hsl(var(--sl-hue-success), 71%, 45%);
+    --sl-color-success-high: hsl(var(--sl-hue-success), 69%, 75%);
+    
+    /* Warning (Amber) - Notes, limitations, caution */
+    --sl-color-warning-low: hsl(var(--sl-hue-warning), 39%, 20%);
+    --sl-color-warning: hsl(var(--sl-hue-warning), 92%, 50%);
+    --sl-color-warning-high: hsl(var(--sl-hue-warning), 92%, 80%);
+    
+    /* Danger (Red) - Errors, unsupported, critical */
+    --sl-color-danger-low: hsl(var(--sl-hue-danger), 39%, 20%);
+    --sl-color-danger: hsl(var(--sl-hue-danger), 84%, 60%);
+    --sl-color-danger-high: hsl(var(--sl-hue-danger), 84%, 85%);
+    
+    /* Muted (Gray) - Default, informational */
+    --sl-color-muted-low: var(--sl-color-gray-6);
+    --sl-color-muted: var(--sl-color-gray-4);
+    --sl-color-muted-high: var(--sl-color-gray-2);
+
+    /* Legacy color mappings for backward compatibility */
+    --sl-hue-orange: 38;
+    --sl-color-orange-low: var(--sl-color-warning-low);
+    --sl-color-orange: var(--sl-color-warning);
+    --sl-color-orange-high: var(--sl-color-warning-high);
+    
+    --sl-hue-green: 142;
+    --sl-color-green-low: var(--sl-color-success-low);
+    --sl-color-green: var(--sl-color-success);
+    --sl-color-green-high: var(--sl-color-success-high);
+    
+    --sl-hue-blue: 224;
+    --sl-color-blue-low: var(--sl-color-primary-low);
+    --sl-color-blue: var(--sl-color-primary);
+    --sl-color-blue-high: var(--sl-color-primary-high);
+    
+    --sl-hue-purple: 271;
+    --sl-color-purple-low: hsl(var(--sl-hue-purple), 39%, 22%);
+    --sl-color-purple: hsl(var(--sl-hue-purple), 82%, 63%);
+    --sl-color-purple-high: hsl(var(--sl-hue-purple), 82%, 89%);
+    
+    --sl-hue-red: 0;
+    --sl-color-red-low: var(--sl-color-danger-low);
+    --sl-color-red: var(--sl-color-danger);
+    --sl-color-red-high: var(--sl-color-danger-high);
+
+    /* Accent colors - Primary Blue */
+    --sl-color-accent-low: var(--sl-color-primary-low);
+    --sl-color-accent: var(--sl-color-primary);
+    --sl-color-accent-high: var(--sl-color-primary-high);
+    
+    /* Text and background colors */
+    --sl-color-text: var(--sl-color-gray-2);
+    --sl-color-text-accent: var(--sl-color-accent-high);
+    --sl-color-text-invert: var(--sl-color-accent-low);
+    --sl-color-bg: var(--sl-color-black);
+    --sl-color-bg-nav: var(--sl-color-gray-6);
+    --sl-color-bg-sidebar: var(--sl-color-gray-6);
+    --sl-color-bg-inline-code: var(--sl-color-gray-5);
+    --sl-color-bg-accent: var(--sl-color-accent-high);
+    
+    /* Border colors */
+    --sl-color-hairline-light: var(--sl-color-gray-5);
+    --sl-color-hairline: var(--sl-color-gray-6);
+    --sl-color-hairline-shade: var(--sl-color-black);
+    --sl-color-backdrop-overlay: hsla(223, 13%, 10%, .66);
+
+    /* Consistent border radius */
+    --card-radius: 0.75rem;
+    --card-radius-sm: 0.5rem;
+    
+    /* Card base styles */
+    --card-border: 1px solid var(--sl-color-gray-5);
+    --card-bg: var(--sl-color-bg-nav);
+    --card-padding: 1.25rem;
+    --card-gap: 1rem;
+}
+
+/* ============================================================================
+   Light Theme Colors
+   ============================================================================ */
+
+[data-theme='light'] {
+    --sl-color-white: hsl(224, 10%, 10%);
+    --sl-color-gray-1: hsl(224, 14%, 16%);
+    --sl-color-gray-2: hsl(224, 10%, 23%);
+    --sl-color-gray-3: hsl(224, 7%, 36%);
+    --sl-color-gray-4: hsl(224, 6%, 56%);
+    --sl-color-gray-5: hsl(224, 6%, 77%);
+    --sl-color-gray-6: hsl(224, 20%, 94%);
+    --sl-color-gray-7: hsl(224, 19%, 97%);
+    --sl-color-black: hsl(0, 0%, 100%);
+
+    /* Light theme semantic colors */
+    --sl-color-primary-high: hsl(var(--sl-hue-primary), 80%, 30%);
+    --sl-color-primary: hsl(var(--sl-hue-primary), 90%, 50%);
+    --sl-color-primary-low: hsl(var(--sl-hue-primary), 88%, 92%);
+    
+    --sl-color-success-high: hsl(var(--sl-hue-success), 80%, 25%);
+    --sl-color-success: hsl(var(--sl-hue-success), 76%, 36%);
+    --sl-color-success-low: hsl(var(--sl-hue-success), 76%, 92%);
+    
+    --sl-color-warning-high: hsl(var(--sl-hue-warning), 80%, 25%);
+    --sl-color-warning: hsl(var(--sl-hue-warning), 92%, 50%);
+    --sl-color-warning-low: hsl(var(--sl-hue-warning), 92%, 92%);
+    
+    --sl-color-danger-high: hsl(var(--sl-hue-danger), 80%, 30%);
+    --sl-color-danger: hsl(var(--sl-hue-danger), 84%, 55%);
+    --sl-color-danger-low: hsl(var(--sl-hue-danger), 84%, 92%);
+
+    /* Light theme UI colors */
+    --sl-color-accent-high: var(--sl-color-primary-high);
+    --sl-color-accent: var(--sl-color-primary);
+    --sl-color-accent-low: var(--sl-color-primary-low);
+    
+    --sl-color-text-accent: var(--sl-color-accent);
+    --sl-color-text-invert: var(--sl-color-black);
+    --sl-color-bg-nav: var(--sl-color-gray-7);
+    --sl-color-bg-sidebar: var(--sl-color-bg);
+    --sl-color-bg-inline-code: var(--sl-color-gray-6);
+    --sl-color-bg-accent: var(--sl-color-accent);
+    --sl-color-hairline-light: var(--sl-color-gray-6);
+    --sl-color-hairline-shade: var(--sl-color-gray-6);
+    --sl-color-backdrop-overlay: hsla(225, 9%, 36%, .66);
+}
+
+/* ============================================================================
+   Dark Theme Colors - Enhanced
+   ============================================================================ */
+
+[data-theme='dark'] {
+    --sl-color-bg: #0B0E14;
+    --sl-color-bg-nav: #0F1219;
+    --sl-color-bg-sidebar: #0F1219;
+    --sl-color-bg-inline-code: #1F2937;
+    --sl-color-text: #E4E4E7;
+    --sl-color-text-accent: #3B82F6;
+    --sl-color-border: #1F2937;
+    --sl-color-hairline: #374151;
+    --sl-color-selection-text: #fff;
+    --sl-color-selection-bg: #3B82F6;
+}
+
+/* ============================================================================
+   Heading Colors
+   ============================================================================ */
+
+h1, h2 {
+    color: var(--sl-color-accent) !important;
+}
+
+[data-theme='dark'] h1,
+[data-theme='dark'] h2 {
+    color: #3B82F6 !important;
+}
+
+[data-theme='light'] h1,
+[data-theme='light'] h2 {
+    color: hsl(var(--sl-hue-blue), 90%, 50%) !important;
+}
+
+/* ============================================================================
+   Main Frame & Layout
+   ============================================================================ */
+
+.main-frame {
+    padding-top: 40px;
+}
+
+/* ============================================================================
+   Right Sidebar Styling
+   ============================================================================ */
+
+:root {
+    --sl-sidebar-width-right: 340px;
+}
+
+.right-sidebar {
+    width: 340px !important;
+    min-width: 340px !important;
+    flex-basis: 340px !important;
+}
+
+.right-sidebar-container {
+    width: 340px !important;
+}
+
+[data-theme='dark'] .right-sidebar {
+    background-color: var(--sl-color-bg-sidebar);
+    border-left: 1px solid var(--sl-color-border);
+}
+
+.right-sidebar-panel {
+    font-size: 0.875rem;
+    padding: 1.5rem 1rem;
+}
+
+.right-sidebar-panel a {
+    text-decoration: none;
+    padding: 0.25rem 0;
+    display: block;
+    border-left: 2px solid transparent;
+    transition: all 0.2s ease;
+}
+
+[data-theme='dark'] .right-sidebar-panel a {
+    color: var(--sl-color-text);
+}
+
+.right-sidebar-panel a:hover {
+    border-left-color: var(--sl-color-border);
+}
+
+[data-theme='dark'] .right-sidebar-panel a:hover {
+    color: var(--sl-color-text-accent);
+}
+
+.right-sidebar-panel a[aria-current="true"] {
+    color: var(--sl-color-text-accent);
+    border-left-color: var(--sl-color-text-accent);
+}
+
+/* ============================================================================
+   Left Sidebar Styling
+   ============================================================================ */
+
+.nav-groups {
+    padding: 1rem;
+}
+
+.nav-group-title {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+[data-theme='dark'] .nav-group-title {
+    color: var(--sl-color-text);
+}
+
+.nav-link a {
+    border-radius: 0.375rem;
+    margin: 0.125rem 0;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+[data-theme='dark'] .nav-link a {
+    color: var(--sl-color-text);
+}
+
+[data-theme='dark'] .nav-link a:hover {
+    background-color: var(--sl-color-bg-inline-code);
+}
+
+[data-theme='dark'] .nav-link a[aria-current="page"] {
+    background-color: var(--sl-color-bg-inline-code);
+    color: var(--sl-color-text-accent);
+}
+
+/* ============================================================================
+   Search Bar Styling
+   ============================================================================ */
+
+[data-theme='dark'] #docsearch {
+    --docsearch-searchbox-background: var(--sl-color-bg-nav);
+    --docsearch-searchbox-focus-background: var(--sl-color-bg-nav);
+    --docsearch-text-color: var(--sl-color-text);
+    --docsearch-muted-color: var(--sl-color-text-accent);
+    --docsearch-searchbox-shadow: inset 0 0 0 1px var(--sl-color-border);
+    border-radius: 0.375rem;
+}
+
+/* ============================================================================
+   Unified Card Base Styles
+   ============================================================================ */
+
+.card-base {
+    padding: var(--card-padding);
+    border-radius: var(--card-radius);
+    border: var(--card-border);
+    background: var(--card-bg);
+    transition: border-color 0.2s ease;
+}
+
+.card-base:hover {
+    border-color: var(--sl-color-gray-4);
+}
+
+/* Card with left accent border */
+.card-accented {
+    border-left-width: 3px;
+    border-left-style: solid;
+}
+
+.card-accented.accent-primary { border-left-color: var(--sl-color-primary); }
+.card-accented.accent-success { border-left-color: var(--sl-color-success); }
+.card-accented.accent-warning { border-left-color: var(--sl-color-warning); }
+.card-accented.accent-danger { border-left-color: var(--sl-color-danger); }
+.card-accented.accent-muted { border-left-color: var(--sl-color-muted); }
+
+/* Card Grid - Consistent Heights */
+.sl-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+    gap: var(--card-gap);
+    align-items: stretch;
+}
+
+.sl-card-grid > * {
+    height: 100%;
+    min-height: 100%;
+}
+
+.sl-card-grid > .feature-card,
+.sl-card-grid > .sl-card,
+.sl-card-grid > .sl-link-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sl-card {
+    border-radius: var(--card-radius);
+    transition: border-color 0.2s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.sl-card:hover {
+    border-color: var(--sl-color-accent-low);
+}
+
+.sl-card > .sl-card__content {
+    flex: 1;
+}
+
+/* ============================================================================
+   Feature Card Component
+   ============================================================================ */
+
+.feature-card {
+    display: flex;
+    gap: 1rem;
+    padding: var(--card-padding);
+    background: var(--card-bg);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    transition: border-color 0.2s ease;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
+}
+
+.feature-card:hover {
+    border-color: var(--sl-color-gray-4);
+}
+
+.feature-card.clickable {
+    cursor: pointer;
+}
+
+.feature-card.clickable:hover {
+    border-color: var(--card-color, var(--sl-color-accent));
+}
+
+.feature-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: var(--card-radius-sm);
+    background: color-mix(in srgb, var(--card-color, var(--sl-color-accent)) 15%, transparent);
+    color: var(--card-color, var(--sl-color-accent));
+    flex-shrink: 0;
+}
+
+.feature-content {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.feature-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.25rem 0;
+    color: var(--sl-color-white);
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+
+.feature-description {
+    font-size: 0.875rem;
+    color: var(--sl-color-gray-3);
+    line-height: 1.5;
+    flex: 1;
+}
+
+.feature-description p {
+    margin: 0;
+}
+
+.feature-description code {
+    background: var(--sl-color-gray-6);
+    padding: 0.125rem 0.375rem;
+    border-radius: 0.25rem;
+    font-size: 0.8125rem;
+}
+
+.feature-description kbd {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 0 var(--sl-color-gray-5);
+}
+
+/* ============================================================================
+   Custom Landing Page Styles
+   ============================================================================ */
+
+.landing-hero {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.hero-section {
+    padding: 3rem 1rem 2rem;
+    text-align: center;
+}
+
+.hero-logo {
+    margin-bottom: 1.5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.25rem, 5vw, 3.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(135deg, var(--sl-color-white) 0%, var(--sl-color-accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.125rem;
+    color: var(--sl-color-gray-3);
+    max-width: 550px;
+    margin: 0 auto 1.5rem;
+    line-height: 1.6;
+}
+
+/* CTA Buttons */
+.cta-buttons {
+    display: flex;
+    gap: 0.75rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.625rem 1.25rem;
+    border-radius: var(--card-radius-sm);
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.cta-button.primary {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+}
+
+.cta-button.primary:hover {
+    filter: brightness(1.1);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    border: 1px solid var(--sl-color-gray-5);
+    color: var(--sl-color-white);
+}
+
+.cta-button.secondary:hover {
+    border-color: var(--sl-color-accent);
+    color: var(--sl-color-accent);
+}
+
+/* Section dividers */
+.section-divider {
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--sl-color-gray-5), transparent);
+    margin: 2rem 0;
+}
+
+/* ============================================================================
+   Steps Section
+   ============================================================================ */
+
+.steps-section {
+    padding: 2rem 1rem;
+}
+
+.steps-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.steps-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+.step-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1rem;
+    background: var(--card-bg);
+    border: var(--card-border);
+    border-radius: var(--card-radius);
+    position: relative;
+}
+
+.step-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+    font-weight: 700;
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+    flex-shrink: 0;
+}
+
+.step-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.375rem;
+    color: var(--sl-color-white);
+}
+
+.step-item p {
+    font-size: 0.8125rem;
+    color: var(--sl-color-gray-3);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* Step connectors (desktop only) */
+@media (min-width: 769px) {
+    .step-item:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -0.5rem;
+        width: 1rem;
+        height: 2px;
+        background: var(--sl-color-gray-5);
+        transform: translateX(100%);
+    }
+}
+
+/* ============================================================================
+   Features Section
+   ============================================================================ */
+
+.features-section {
+    padding: 2rem 1rem;
+}
+
+.features-section h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.feature-grid .feature-card {
+    padding: 1rem;
+}
+
+.feature-grid .feature-card h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+    color: var(--sl-color-white);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.feature-grid .feature-card p {
+    font-size: 0.8125rem;
+    color: var(--sl-color-gray-3);
+    margin: 0;
+    line-height: 1.5;
+}
+
+.feature-grid .feature-icon-inline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 0.25rem;
+    background: color-mix(in srgb, var(--sl-color-accent) 15%, transparent);
+    color: var(--sl-color-accent);
+    flex-shrink: 0;
+}
+
+/* ============================================================================
+   Disclaimer Box
+   ============================================================================ */
+
+.disclaimer-box {
+    margin: 2rem auto;
+    max-width: 700px;
+    padding: 1rem 1.25rem;
+    border-radius: var(--card-radius-sm);
+    border: var(--card-border);
+    background: var(--card-bg);
+    text-align: left;
+}
+
+.disclaimer-box strong {
+    color: var(--sl-color-accent);
+}
+
+.disclaimer-box p {
+    font-size: 0.8125rem;
+    color: var(--sl-color-gray-3);
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ============================================================================
+   Responsive Adjustments
+   ============================================================================ */
+
+@media (max-width: 768px) {
+    .hero-section {
+        padding: 2rem 1rem;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button {
+        width: 100%;
+        max-width: 260px;
+        justify-content: center;
+    }
+}
+
+/* ============================================================================
+   UI Elements
+   ============================================================================ */
+
+.screenshot-placeholder {
+    background: var(--sl-color-gray-6);
+    border: 2px dashed var(--sl-color-gray-4);
+    border-radius: var(--card-radius);
+    padding: 3rem 2rem;
+    text-align: center;
+    margin: 1.5rem 0;
+    transition: border-color 0.2s ease;
+}
+
+.screenshot-placeholder:hover {
+    border-color: var(--sl-color-accent);
+}
+
+kbd {
+    display: inline-block;
+    padding: 0.125rem 0.375rem;
+    font-size: 0.75rem;
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    color: var(--sl-color-white);
+    background: var(--sl-color-gray-6);
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: 0.25rem;
+    box-shadow: 0 1px 0 var(--sl-color-gray-5);
+}
+
+.sl-badge {
+    font-weight: 500;
+}
+
+pre {
+    border: 1px solid var(--sl-color-gray-5);
+    border-radius: var(--card-radius-sm);
+}
+
+/* ============================================================================
+   Starlight Component Overrides
+   ============================================================================ */
+
+.sl-steps {
+    padding-left: 0;
+}
+
+.sl-steps > li {
+    padding-bottom: 1.5rem;
+}
+
+.sl-steps > li::before {
+    background: var(--sl-color-accent);
+    color: var(--sl-color-black);
+}
+
+.sl-link-card {
+    transition: border-color 0.2s ease;
+    border-radius: var(--card-radius);
+}
+
+.sl-link-card:hover {
+    border-color: var(--sl-color-accent);
+}
+
+/* Tab styling */
+[role="tablist"] {
+    border-bottom: 1px solid var(--sl-color-gray-5);
+    margin-bottom: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    overflow: visible;
+}
+
+starlight-tabs {
+    overflow: visible;
+}
+
+starlight-tabs > [role="tablist"] {
+    overflow-x: visible;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+starlight-tabs > [role="tablist"]::-webkit-scrollbar {
+    display: none;
+}
+
+[role="tab"] {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+[role="tab"][aria-selected="true"] {
+    border-bottom-color: var(--sl-color-accent);
+    color: var(--sl-color-accent);
+}

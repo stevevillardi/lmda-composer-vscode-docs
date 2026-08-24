@@ -1,0 +1,48 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import { Image } from 'astro:assets';
+import { Play, Package, Terminal, CloudUpload, Search, History } from '@lucide/astro';
+import logo from '../assets/icon128.png';
+
+const isLandingPage = Astro.url.pathname === '/lmda-composer-vscode-docs/' || Astro.url.pathname === '/lmda-composer-vscode-docs';
+---
+
+{isLandingPage ? (
+  <div class="landing-hero">
+    <section class="hero-section">
+      <Image src={logo} alt="LMDA Composer for VS Code" width={80} height={80} class="hero-logo" />
+      <h1 class="hero-title">LMDA Composer for VS Code</h1>
+      <p class="hero-subtitle">
+        Run and debug LogicMonitor Groovy and PowerShell module scripts from VS Code and Cursor using Bearer token auth.
+      </p>
+      <div class="cta-buttons">
+        <a href="/lmda-composer-vscode-docs/getting-started/installation/" class="cta-button primary">Get Started</a>
+        <a href="/lmda-composer-vscode-docs/getting-started/quick-start/" class="cta-button secondary">Quick Start</a>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+    <section class="steps-section">
+      <h2>How It Works</h2>
+      <div class="steps-grid">
+        <div class="step-item"><div class="step-number">1</div><h3>Connect Your Portal</h3><p>Add your LogicMonitor hostname and Bearer token. Tokens stay in VS Code Secret Storage.</p></div>
+        <div class="step-item"><div class="step-number">2</div><h3>Pick Collector & Script</h3><p>Choose a collector, open a Groovy or PowerShell script, or load from the LogicModules tree.</p></div>
+        <div class="step-item"><div class="step-number">3</div><h3>Run & Push</h3><p>Execute on collectors via debug API, review output, and push script changes back to the portal.</p></div>
+      </div>
+    </section>
+    <div class="section-divider"></div>
+    <section class="features-section">
+      <h2>Features</h2>
+      <div class="feature-grid">
+        <div class="feature-card"><h3><span class="feature-icon-inline"><Play size={16} /></span> Script execution</h3><p>Run Groovy and PowerShell on collectors with live output and Problems-panel validation.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><Package size={16} /></span> LogicModules browser</h3><p>Explore portal modules, load scripts into the editor, and open modules in LogicMonitor.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><CloudUpload size={16} /></span> Push to Portal</h3><p>Review a side-by-side diff and publish script changes with an optional audit reason.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><Terminal size={16} /></span> Debug commands</h3><p>Search and run collector debug commands from the LMDA sidebar.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><Search size={16} /></span> CodeLens actions</h3><p>Run Script, Run Selection, Push to Portal, and Open in LogicMonitor above your code.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><History size={16} /></span> Execution history</h3><p>Replay recent script runs from the command palette.</p></div>
+      </div>
+    </section>
+    <div class="disclaimer-box"><p><strong>Community Project:</strong> LMDA Composer is an independent community project and is not affiliated with, endorsed by, or officially connected to LogicMonitor, Inc.</p></div>
+  </div>
+) : (
+  <slot />
+)}

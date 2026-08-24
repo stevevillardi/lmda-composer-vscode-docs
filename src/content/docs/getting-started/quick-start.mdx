@@ -1,0 +1,32 @@
+---
+title: Quick Start
+description: Connect a portal, pick a collector, and run a script.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+
+## 1. Add portal
+
+**LMDA: Add Portal** — hostname (e.g. `acme.logicmonitor.com`) and Bearer token. Tokens use Secret Storage.
+
+## 2. Select collector
+
+**LMDA: Select Collector** — Groovy: Linux or Windows; PowerShell: **Windows only**.
+
+## 3. Open a script
+
+Walkthrough sample, local `.groovy`/`.ps1`, or load from **LogicModules**.
+
+## 4. Run
+
+`Cmd+Alt+R` / `Ctrl+Alt+R`, editor **Play** icon, or **LMDA: Run Script**. Output in **LMDA Composer** channel.
+
+<Aside type="note">Set **Mode** in the status bar for AD/collection Problems parsing.</Aside>
+
+<img src="/lmda-composer-vscode-docs/screenshots/run-script.png" alt="Run script" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
+
+## Push to portal
+
+Edit a loaded module script → **Push to Portal** → review diff.
+
+<img src="/lmda-composer-vscode-docs/screenshots/push-to-portal.png" alt="Push to portal" style="border-radius: 0.5rem; margin: 1.5rem 0;" />

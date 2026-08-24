@@ -1,0 +1,30 @@
+---
+title: Installation
+description: Install LMDA Composer from the VS Code Marketplace or Open VSX.
+---
+
+import { Aside, LinkCard } from '@astrojs/starlight/components';
+
+## Prerequisites
+
+- LogicMonitor portal with **collector debug** enabled (**Settings → Security**)
+- **Bearer token** with collector debug and module permissions (**Settings → User Access**)
+
+## Install
+
+<LinkCard title="VS Code Marketplace" href="https://marketplace.visualstudio.com/items?itemName=stevevillardi.lmda-composer-vscode" />
+<LinkCard title="Open VSX" href="https://open-vsx.org/extension/stevevillardi/lmda-composer-vscode" />
+
+Or search **LMDA Composer** in Extensions (`Cmd+Shift+X` / `Ctrl+Shift+X`).
+
+<Aside type="tip">If `.groovy` opens as Plain Text, install **code-groovy** or set `"files.associations": { "*.groovy": "groovy" }`.</Aside>
+
+## Verify
+
+1. Open the **LMDA Composer** activity bar view or run **LMDA: Open Walkthrough**.
+2. Run **LMDA: Add Portal** with hostname and Bearer token.
+3. Open a `.groovy` or `.ps1` file.
+
+<img src="/lmda-composer-vscode-docs/screenshots/overview.png" alt="Overview" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
+
+Next: [Quick Start](/lmda-composer-vscode-docs/getting-started/quick-start/)

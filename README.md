@@ -1,5 +1,18 @@
-# LMDA Composer VS Code — marketplace assets
+# LMDA Composer VS Code — Documentation
 
-Public screenshots used by the [LMDA Composer VS Code extension](https://marketplace.visualstudio.com/items?itemName=stevevillardi.lmda-composer-vscode) listing.
+Documentation for the [LMDA Composer VS Code extension](https://github.com/stevevillardi/lmda-composer-vscode), built with Astro and Starlight.
 
-Source extension repository is private; this repo hosts only public marketing images.
+## Live site
+
+**https://stevevillardi.github.io/lmda-composer-vscode-docs/**
+
+## Local development
+
+```bash
+npm install
+npm run dev
+```
+
+## Deploy
+
+GitHub Pages deploys from `.github/workflows/docs.yml` on pushes to `main`.
