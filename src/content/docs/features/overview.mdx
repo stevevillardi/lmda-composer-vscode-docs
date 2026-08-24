@@ -1,22 +1,42 @@
 ---
 title: Features Overview
-description: LMDA Composer VS Code capabilities.
+description: What you can do with LMDA Composer in VS Code and Cursor.
 ---
 
-## Script execution
+## Run scripts on collectors
 
-Run Groovy/PowerShell via collector debug; output channel + Problems validation; cancel in-flight runs.
+Open Groovy or PowerShell module scripts and run them on a LogicMonitor collector from the editor title bar, keyboard shortcut, or command palette. Output appears in **LMDA Composer**; validation issues show in **Problems** when you use auto-discovery or collection modes. Cancel long runs from the editor or with **LMDA: Cancel Execution**.
 
-## LogicModules browser
+## Browse LogicModules
 
-Browse, filter, load scripts, open in LogicMonitor.
+Explore DataSources, PropertySources, and other LogicModules from the LMDA sidebar. Filter the tree, load collection or auto-discovery scripts into the editor, open modules in LogicMonitor, and copy portal links.
 
-<img src="/lmda-composer-vscode-docs/screenshots/modules-sidebar.png" alt="Modules sidebar" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
+<img src="/lmda-composer-vscode-docs/screenshots/modules-sidebar.png" alt="LogicModules sidebar" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
 
-## Push to Portal
+## Push changes to your portal
 
-Diff review, optional audit reason, workspace module drafts.
+Edit a loaded module script and use **Push to Portal** to publish changes. Review a side-by-side diff before committing, add an optional audit reason, and reopen or discard local drafts from the command palette.
 
-## Debug commands, CodeLens, history, lint, snippets
+<img src="/lmda-composer-vscode-docs/screenshots/push-to-portal.png" alt="Push to portal diff review" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
 
-See [Settings](/lmda-composer-vscode-docs/reference/settings/) for configuration.
+## Debug commands
+
+Search and run collector debug commands from the **Debug Commands** sidebar view without leaving the editor.
+
+## Inline actions
+
+When enabled, actions appear above Groovy and PowerShell scripts: **Run Script**, **Run Selection**, **Push to Portal**, and **Open in LogicMonitor**.
+
+## Device properties
+
+Select a device to inspect system, custom, inherited, and auto properties. Copy property names for use in `##TOKEN##` placeholders and PowerShell scripts.
+
+## Execution history
+
+Replay recent script runs with **LMDA: Show Execution History**. Clear history when you no longer need it.
+
+## Snippets and diagnostics
+
+Groovy and PowerShell snippets speed up common patterns. Diagnostics highlight `##TOKEN##` placeholders and execution-mode hints in the editor.
+
+For configuration options, see [Settings](/lmda-composer-vscode-docs/reference/settings/).

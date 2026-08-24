@@ -1,19 +1,21 @@
 ---
 title: Settings
-description: Configuration reference (`@lmda`).
+description: Configure portals, collectors, execution modes, and editor behavior.
 ---
 
-| Setting | Purpose |
-| --- | --- |
-| `lmda.defaultPortalId` | Portal for this window |
-| `lmda.defaultCollectorId` | Default collector (`0` = prompt) |
-| `lmda.defaultDeviceHostname` | Device for tokens / hostProps |
-| `lmda.executionMode` | `freeform`, `ad`, `collection`, `batchcollection` |
-| `lmda.defaultLanguage` | New untitled script language |
-| `lmda.enableModuleLint` | Token/mode diagnostics |
-| `lmda.focusOutputOnRun` | Focus Output on run |
-| `lmda.executionHistory.enabled` | Record runs for replay |
-| `lmda.executionHistory.maxEntries` | History size (1–200) |
-| `lmda.codeLens.enabled` | Inline Run/Push/Open actions |
+Search **LMDA** in VS Code Settings or edit `settings.json` directly.
 
-Tokens: Secret Storage. Hostnames: settings.
+| Setting | What it does |
+| --- | --- |
+| `lmda.defaultPortalId` | Active portal for this project folder |
+| `lmda.defaultCollectorId` | Default collector (`0` = prompt when you run) |
+| `lmda.defaultDeviceHostname` | Default device for `##TOKEN##` placeholders |
+| `lmda.executionMode` | How run output is validated: `freeform`, `ad`, `collection`, or `batchcollection` |
+| `lmda.defaultLanguage` | Language for new untitled scripts |
+| `lmda.enableModuleLint` | Show diagnostics for tokens and execution modes |
+| `lmda.focusOutputOnRun` | Open Output and show the LMDA Composer log when a script runs |
+| `lmda.executionHistory.enabled` | Keep a list of recent script runs |
+| `lmda.executionHistory.maxEntries` | How many recent runs to keep (1–200) |
+| `lmda.codeLens.enabled` | Show inline Run, Push, and Open actions above scripts |
+
+Bearer tokens are stored securely by VS Code. Portal hostnames and other preferences are saved in your settings.

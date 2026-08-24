@@ -7,7 +7,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'LMDA Composer (VS Code)',
-      description: 'Run and debug LogicMonitor module scripts from VS Code and Cursor.',
+      description: 'Develop, run, and debug LogicMonitor Groovy and PowerShell module scripts from VS Code and Cursor.',
       logo: { src: './src/assets/icon128.png', alt: 'LMDA Composer' },
       customCss: ['./src/styles/custom.css'],
       editLink: { baseUrl: 'https://github.com/stevevillardi/lmda-composer-vscode-docs/edit/main/' },

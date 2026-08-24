@@ -1,16 +1,16 @@
 ---
 title: Troubleshooting
-description: Common issues.
+description: Common issues and how to fix them.
 ---
 
-**API failures** — **LMDA: Update Portal Bearer Token** (reinstall/publisher change requires reconnect).
+**Connection or permission errors** — Run **LMDA: Update Portal Bearer Token** to refresh credentials. Reinstalling the extension or changing publisher may require reconnecting your portal.
 
-**Sidebar inactive** — Open `.groovy` or `.ps1` first.
+**LMDA sidebar looks inactive** — Open a `.groovy` or `.ps1` file first so the extension activates.
 
-**PowerShell fails** — Use a **Windows** collector.
+**PowerShell script fails** — Select a **Windows** collector.
 
-**Untrusted workspace** — Trust the folder before runs/tokens.
+**Untrusted workspace warning** — Trust the folder before running scripts or saving tokens.
 
-**Plain Text Groovy** — Install **code-groovy** or `"files.associations": { "*.groovy": "groovy" }`.
+**Groovy opens as Plain Text** — Install **code-groovy** or set `"files.associations": { "*.groovy": "groovy" }`.
 
 [Open an issue](https://github.com/stevevillardi/lmda-composer-vscode-docs/issues) or email steven.villardi@logicmonitor.com.

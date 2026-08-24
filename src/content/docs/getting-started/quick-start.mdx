@@ -7,26 +7,26 @@ import { Aside } from '@astrojs/starlight/components';
 
 ## 1. Add portal
 
-**LMDA: Add Portal** — hostname (e.g. `acme.logicmonitor.com`) and Bearer token. Tokens use Secret Storage.
+Run **LMDA: Add Portal** and enter your portal hostname (e.g. `acme.logicmonitor.com`) and Bearer token. Credentials are stored securely by VS Code and are not saved in your settings file.
 
 ## 2. Select collector
 
-**LMDA: Select Collector** — Groovy: Linux or Windows; PowerShell: **Windows only**.
+Run **LMDA: Select Collector**. Groovy scripts run on Linux or Windows collectors; PowerShell requires a **Windows** collector.
 
 ## 3. Open a script
 
-Walkthrough sample, local `.groovy`/`.ps1`, or load from **LogicModules**.
+Use the walkthrough sample, open a local `.groovy` or `.ps1` file, or load a script from **LogicModules** in the sidebar.
 
 ## 4. Run
 
-`Cmd+Alt+R` / `Ctrl+Alt+R`, editor **Play** icon, or **LMDA: Run Script**. Output in **LMDA Composer** channel.
+Press `Cmd+Alt+R` / `Ctrl+Alt+R`, click the editor **Play** icon, or run **LMDA: Run Script**. Output appears in the **LMDA Composer** panel.
 
-<Aside type="note">Set **Mode** in the status bar for AD/collection Problems parsing.</Aside>
+<Aside type="note">Set **Mode** in the status bar to validate auto-discovery or collection output in Problems.</Aside>
 
 <img src="/lmda-composer-vscode-docs/screenshots/run-script.png" alt="Run script" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
 
 ## Push to portal
 
-Edit a loaded module script → **Push to Portal** → review diff.
+Edit a loaded module script, then use **Push to Portal** and review the diff before publishing.
 
 <img src="/lmda-composer-vscode-docs/screenshots/push-to-portal.png" alt="Push to portal" style="border-radius: 0.5rem; margin: 1.5rem 0;" />
