@@ -1,7 +1,7 @@
 ---
 import type { Props } from '@astrojs/starlight/props';
 import { Image } from 'astro:assets';
-import { Play, Package, Terminal, CloudUpload, Search, History } from '@lucide/astro';
+import { Play, Package, Terminal, CloudUpload, Search, History, MousePointerClick } from '@lucide/astro';
 import logo from '../assets/icon128.png';
 
 const isLandingPage = Astro.url.pathname === '/lmda-composer-vscode-docs/' || Astro.url.pathname === '/lmda-composer-vscode-docs';
@@ -37,7 +37,8 @@ const isLandingPage = Astro.url.pathname === '/lmda-composer-vscode-docs/' || As
         <div class="feature-card"><h3><span class="feature-icon-inline"><Package size={16} /></span> LogicModules browser</h3><p>Explore portal modules, load scripts into the editor, and open modules in LogicMonitor.</p></div>
         <div class="feature-card"><h3><span class="feature-icon-inline"><CloudUpload size={16} /></span> Push to Portal</h3><p>Review a side-by-side diff and publish script changes with an optional audit reason.</p></div>
         <div class="feature-card"><h3><span class="feature-icon-inline"><Terminal size={16} /></span> Debug commands</h3><p>Search and run collector debug commands from the LMDA sidebar.</p></div>
-        <div class="feature-card"><h3><span class="feature-icon-inline"><Search size={16} /></span> Inline actions</h3><p>Run Script, Run Selection, Push to Portal, and Open in LogicMonitor above your code.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><Search size={16} /></span> Script lint</h3><p>Static diagnostics for tokens, PropertySource naming, BatchScript patterns, and PowerShell output — in Problems as you type.</p></div>
+        <div class="feature-card"><h3><span class="feature-icon-inline"><MousePointerClick size={16} /></span> Inline actions</h3><p>Run Script, Run Selection, Push to Portal, and Open in LogicMonitor above your code.</p></div>
         <div class="feature-card"><h3><span class="feature-icon-inline"><History size={16} /></span> Execution history</h3><p>Replay recent script runs from the command palette.</p></div>
       </div>
     </section>

@@ -1,6 +1,6 @@
 # LMDA Composer VS Code — Documentation
 
-Documentation for the [LMDA Composer VS Code extension](https://github.com/stevevillardi/lmda-composer-vscode), built with Astro and Starlight.
+Documentation for the [LMDA Composer VS Code extension](https://marketplace.visualstudio.com/items?itemName=stevevillardi.lmda-composer-vscode), built with Astro and Starlight.
 
 ## Live site
 

@@ -16,7 +16,10 @@ export default defineConfig({
           { label: 'Installation', slug: 'getting-started/installation' },
           { label: 'Quick Start', slug: 'getting-started/quick-start' },
         ]},
-        { label: 'Features', items: [{ label: 'Overview', slug: 'features/overview' }] },
+        { label: 'Features', items: [
+          { label: 'Overview', slug: 'features/overview' },
+          { label: 'Script Lint', slug: 'features/script-lint' },
+        ]},
         { label: 'Reference', items: [
           { label: 'Settings', slug: 'reference/settings' },
           { label: 'Troubleshooting', slug: 'reference/troubleshooting' },
