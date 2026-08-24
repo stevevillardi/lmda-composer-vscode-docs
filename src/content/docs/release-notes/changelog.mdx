@@ -3,11 +3,21 @@ title: Changelog
 description: VS Code extension release history.
 ---
 
-## [Unreleased]
+## [0.1.3] - 2026-08-24
 
 ### Added
 
-- [Script Lint](/lmda-composer-vscode-docs/features/script-lint/) documentation — PropertySource naming, BatchScript patterns, PowerShell output, and property token validation (based on [monitoring-recipes](https://github.com/logicmonitor/monitoring-recipes) best practices)
+- [Script Lint](/lmda-composer-vscode-docs/features/script-lint/) — static diagnostics for PropertySource naming, BatchScript patterns, PowerShell output, and property tokens (based on [monitoring-recipes](https://github.com/logicmonitor/monitoring-recipes) best practices)
+
+### Changed
+
+- LogicModules sidebar lazy-loads module types on expand
+- Marketplace repository metadata points to this public documentation repo
+
+### Fixed
+
+- Portal switching clears stale collector and device context
+- Push to Portal preserves PowerShell script type on commit payloads
 
 ## [0.1.2] - 2026-08-24
 
@@ -20,10 +30,6 @@ description: VS Code extension release history.
 
 - Marketplace README streamlined; full guides live on the documentation site
 - Screenshots served from the documentation site
-
-### Fixed
-
-- Switching portals clears the previous collector and device selection instead of re-applying a stale default collector
 
 ## [0.1.1] - 2026-08-24
 
